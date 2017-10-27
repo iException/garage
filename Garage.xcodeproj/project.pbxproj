@@ -109,12 +109,8 @@
 		F1AABB6D1FA335430042B9D2 /* Garage */ = {
 			isa = PBXGroup;
 			children = (
-				F1AABB6E1FA335430042B9D2 /* AppDelegate.swift */,
-				F1AABB701FA335430042B9D2 /* ViewController.swift */,
-				F1AABB721FA335430042B9D2 /* Main.storyboard */,
-				F1AABB751FA335430042B9D2 /* Assets.xcassets */,
-				F1AABB771FA335430042B9D2 /* LaunchScreen.storyboard */,
-				F1AABB7A1FA335430042B9D2 /* Info.plist */,
+				F1AABB901FA33D7C0042B9D2 /* Sources */,
+				F1AABB8F1FA33D440042B9D2 /* Resources */,
 			);
 			path = Garage;
 			sourceTree = "<group>";
@@ -126,6 +122,26 @@
 				F1AABB851FA335430042B9D2 /* Info.plist */,
 			);
 			path = GarageTests;
+			sourceTree = "<group>";
+		};
+		F1AABB8F1FA33D440042B9D2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F1AABB721FA335430042B9D2 /* Main.storyboard */,
+				F1AABB751FA335430042B9D2 /* Assets.xcassets */,
+				F1AABB771FA335430042B9D2 /* LaunchScreen.storyboard */,
+				F1AABB7A1FA335430042B9D2 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F1AABB901FA33D7C0042B9D2 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F1AABB6E1FA335430042B9D2 /* AppDelegate.swift */,
+				F1AABB701FA335430042B9D2 /* ViewController.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -486,7 +502,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Garage/Info.plist;
+				INFOPLIST_FILE = Garage/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.baixing.Garage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -501,7 +517,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Garage/Info.plist;
+				INFOPLIST_FILE = Garage/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.baixing.Garage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
