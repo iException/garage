@@ -41,16 +41,16 @@ class VehicleListViewController: UIViewController {
         super.viewDidLoad()
         
 //        forgeData()
-        removeAllVehicle()
+//        removeAllVehicle()
         setUpViews()
         configurePhotoBrowserOptions()
         reload()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            let viewController = ViewController()
-            viewController.delegate = self
-            self.present(viewController, animated: true, completion: nil)
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//            let viewController = ViewController()
+//            viewController.delegate = self
+//            self.present(viewController, animated: true, completion: nil)
+//        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -193,8 +193,7 @@ extension VehicleListViewController: SKPhotoBrowserDelegate {
     func removePhoto(_ browser: SKPhotoBrowser, index: Int, reload: @escaping (() -> Void)) {
         guard let vehicle = viewModelAtIndex(index: index) else { return }
         deleteVehicle(vehicle: vehicle.model, realm: realm)
-        loadVehicle()
-        reloadCollectionView()
+        self.reload()
         reload()
     }
     
@@ -245,6 +244,9 @@ extension VehicleListViewController {
     
     private func deleteAssets(_ assets: [PHAsset]) {
         // TODO:
+        PHPhotoLibrary.shared().performChanges({
+            PHAssetChangeRequest.deleteAssets(NSArray(array: assets))
+        }) { (result, error) in
+        }
     }
-    
 }
