@@ -43,7 +43,12 @@ class Vehicle: Object {
     }
     
     init(image: UIImage) {
-        self.imageData = UIImagePNGRepresentation(image)
+        var imageData = UIImagePNGRepresentation(image)
+        if imageData == nil {
+            imageData = UIImageJPEGRepresentation(image, 0.7)
+        }
+        self.imageData = imageData
+        
         super.init()
     }
 }

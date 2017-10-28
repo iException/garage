@@ -13,6 +13,7 @@
 		5374D83C1FA43692002EA204 /* VehicleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374D83B1FA43692002EA204 /* VehicleViewModel.swift */; };
 		5374D83F1FA44F46002EA204 /* CollectionSafeIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374D83E1FA44F46002EA204 /* CollectionSafeIndex.swift */; };
 		538C5DB71FA462A200EE1B69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538C5DB61FA462A200EE1B69 /* ViewController.swift */; };
+		538C5DB91FA4639400EE1B69 /* VehicleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538C5DB81FA4639400EE1B69 /* VehicleListViewController.swift */; };
 		8AC81EF35CEC801E96830597 /* Pods_GarageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55BCDAF1ED45AD3C96EC2CDC /* Pods_GarageTests.framework */; };
 		F1AABB6F1FA335430042B9D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AABB6E1FA335430042B9D2 /* AppDelegate.swift */; };
 		F1AABB791FA335430042B9D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1AABB771FA335430042B9D2 /* LaunchScreen.storyboard */; };
@@ -40,6 +41,7 @@
 		5374D83B1FA43692002EA204 /* VehicleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleViewModel.swift; sourceTree = "<group>"; };
 		5374D83E1FA44F46002EA204 /* CollectionSafeIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionSafeIndex.swift; sourceTree = "<group>"; };
 		538C5DB61FA462A200EE1B69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		538C5DB81FA4639400EE1B69 /* VehicleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListViewController.swift; sourceTree = "<group>"; };
 		55BCDAF1ED45AD3C96EC2CDC /* Pods_GarageTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GarageTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F661924FD94EEA75BD92D1E /* Pods-GarageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GarageTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GarageTests/Pods-GarageTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7C49BDC52CE672DC3A6381E6 /* Pods-Garage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Garage.release.xcconfig"; path = "Pods/Target Support Files/Pods-Garage/Pods-Garage.release.xcconfig"; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				538C5DB61FA462A200EE1B69 /* ViewController.swift */,
 				F1AABB6E1FA335430042B9D2 /* AppDelegate.swift */,
 				F1AABB951FA41A510042B9D2 /* ImageClassification.swift */,
+				538C5DB81FA4639400EE1B69 /* VehicleListViewController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				5374D83C1FA43692002EA204 /* VehicleViewModel.swift in Sources */,
 				5374D8311FA41558002EA204 /* Vehicle.swift in Sources */,
 				5374D8341FA42A53002EA204 /* VehicleCollectionViewCell.swift in Sources */,
+				538C5DB91FA4639400EE1B69 /* VehicleListViewController.swift in Sources */,
 				F1AABB921FA3545D0042B9D2 /* Nudity.mlmodel in Sources */,
 				F1AABB961FA41A510042B9D2 /* ImageClassification.swift in Sources */,
 				F1AABB941FA35FAA0042B9D2 /* UIImage+Garage.swift in Sources */,

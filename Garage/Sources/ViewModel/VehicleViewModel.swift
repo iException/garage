@@ -36,7 +36,7 @@ extension VehicleViewModel: SKPhotoProtocol {
     
     var caption: String! {
         get {
-            return "some text"
+            return ""
         }
     }
 }
