@@ -15,7 +15,7 @@ final class ViewController: UIViewController {
     let targetSize = CGSize(width: 224, height: 224)
     let cachingImageManager = PHCachingImageManager()
     var currentIndex: Int = NSNotFound
-
+    var nsfwAssets: [PHAsset] = []
     var assets: [PHAsset] = [] {
         willSet {
             cachingImageManager.stopCachingImagesForAllAssets()
@@ -116,6 +116,7 @@ final class ViewController: UIViewController {
 
     private func classifyAllPhotos() {
         currentIndex = -1
+        nsfwAssets = []
         classifyNextPhoto()
     }
 
@@ -139,15 +140,23 @@ final class ViewController: UIViewController {
 
 extension ViewController: ClassificationServiceDelegate {
     func classificationService(_ service: ClassificationService, didFinishClassifying results: [ClassificationResult]?, with identifier: Any?) {
-        print("======== FinishClassifying ========\n* Index: \(currentIndex)")
+        print("======== FinishClassifying ========\nIndex: \(currentIndex)")
 
-        results?.forEach({ (result) in
-            print(result)
-        })
+        DispatchQueue.main.async {
+            results?.forEach({ (result) in
+                print(result)
+            })
 
-        print("\n")
+            print("\n")
 
-        classifyNextPhoto()
+            if results?.first?.label == .nsfw {
+                if let asset = identifier {
+                    self.nsfwAssets.append(asset as! PHAsset)
+                }
+            }
+
+            self.classifyNextPhoto()
+        }
     }
 
     func classificationService(_ service: ClassificationService, didStartClassifying image: UIImage, with identifier: Any?) {

@@ -97,12 +97,12 @@ class ClassificationService {
     // MARK: - Private
 
     private func processClassifications(for request: VNRequest, error: Error?) {
-        self.classifying = false
+        classifying = false
 
         guard let results = request.results else {
             print("Unable to classify image.\n\(error!.localizedDescription)")
-            self.delegate?.classificationService(self, didFailedClassifying: error, with: self.currentIdentifier)
-            self.currentIdentifier = nil
+            delegate?.classificationService(self, didFailedClassifying: error, with: currentIdentifier)
+            currentIdentifier = nil
             return
         }
 
@@ -111,15 +111,15 @@ class ClassificationService {
 
         if classifications.isEmpty {
             print ("Nothing recognized.")
-            self.delegate?.classificationService(self, didFinishClassifying: nil, with: self.currentIdentifier)
-            self.currentIdentifier = nil
+            delegate?.classificationService(self, didFinishClassifying: nil, with: currentIdentifier)
+            currentIdentifier = nil
         } else {
             let topClassifications = classifications.prefix(2)
             let classificationResults = topClassifications.map { classification in
                 return ClassificationResult(label: ClassificationLabel(rawValue: classification.identifier)!, confidence: Double(classification.confidence))
             }
-            self.delegate?.classificationService(self, didFinishClassifying: classificationResults, with: self.currentIdentifier)
-            self.currentIdentifier = nil
+            delegate?.classificationService(self, didFinishClassifying: classificationResults, with: currentIdentifier)
+            currentIdentifier = nil
         }
     }
 }
