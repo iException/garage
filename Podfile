@@ -8,6 +8,8 @@ target 'Garage' do
   pod "RealmSwift", '~> 3.0'
   pod "SVProgressHUD"
 
+  pod 'VENTouchLock', :git => 'https://github.com/venmo/VENTouchLock.git'
+
   target 'GarageTests' do
     inherit! :search_paths
 

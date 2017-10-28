@@ -22,6 +22,7 @@
 		F1AABB941FA35FAA0042B9D2 /* UIImage+Garage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AABB931FA35FAA0042B9D2 /* UIImage+Garage.swift */; };
 		F1AABB961FA41A510042B9D2 /* ImageClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AABB951FA41A510042B9D2 /* ImageClassification.swift */; };
 		F1AABB981FA41ED50042B9D2 /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AABB971FA41ED50042B9D2 /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
+		F1AABB9C1FA468FA0042B9D2 /* LockSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AABB9B1FA468FA0042B9D2 /* LockSplashViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		F1AABB931FA35FAA0042B9D2 /* UIImage+Garage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Garage.swift"; sourceTree = "<group>"; };
 		F1AABB951FA41A510042B9D2 /* ImageClassification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassification.swift; sourceTree = "<group>"; };
 		F1AABB971FA41ED50042B9D2 /* CGImagePropertyOrientation+UIImageOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+UIImageOrientation.swift"; sourceTree = "<group>"; };
+		F1AABB9B1FA468FA0042B9D2 /* LockSplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockSplashViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 				F1AABB951FA41A510042B9D2 /* ImageClassification.swift */,
 				538C5DB81FA4639400EE1B69 /* VehicleListViewController.swift */,
 				538C5DBE1FA489BF00EE1B69 /* Garage-Bridging-Header.h */,
+				F1AABB9B1FA468FA0042B9D2 /* LockSplashViewController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -348,15 +351,19 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Garage/Pods-Garage-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework",
 				"${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/VENTouchLock/VENTouchLock.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAMKeychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKPhotoBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VENTouchLock.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -422,6 +429,7 @@
 				538C5DB91FA4639400EE1B69 /* VehicleListViewController.swift in Sources */,
 				F1AABB921FA3545D0042B9D2 /* Nudity.mlmodel in Sources */,
 				F1AABB961FA41A510042B9D2 /* ImageClassification.swift in Sources */,
+				F1AABB9C1FA468FA0042B9D2 /* LockSplashViewController.swift in Sources */,
 				F1AABB941FA35FAA0042B9D2 /* UIImage+Garage.swift in Sources */,
 				F1AABB981FA41ED50042B9D2 /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
 				F1AABB6F1FA335430042B9D2 /* AppDelegate.swift in Sources */,
