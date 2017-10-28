@@ -14,6 +14,7 @@ final class ViewController: UIViewController {
     // MARK: - Properties
     let targetSize = CGSize(width: 224, height: 224)
     let cachingImageManager = PHCachingImageManager()
+    var currentIndex: Int = NSNotFound
 
     var assets: [PHAsset] = [] {
         willSet {
@@ -86,8 +87,7 @@ final class ViewController: UIViewController {
             if (status == .authorized) {
                 DispatchQueue.main.async {
                     self.loadAllPhotos()
-                    self.classifyAllPhotosWithVision()
-//                    self.classifyAllPhotosWithCoreMLOnly()
+                    self.classifyAllPhotos()
                 }
             } else {
                 print("Access denied")
@@ -98,7 +98,7 @@ final class ViewController: UIViewController {
 
     // MARK: - Private
 
-    func loadAllPhotos() {
+    private func loadAllPhotos() {
         let options = PHFetchOptions()
         options.sortDescriptors = [
             NSSortDescriptor(key: "creationDate", ascending: true)
@@ -114,47 +114,48 @@ final class ViewController: UIViewController {
         assets = reusltAssets
     }
 
-    func classifyAllPhotosWithVision() {
-        for asset in assets {
-            cachingImageManager.requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFit, options: nil, resultHandler: { (initialResult, _) in
-                if let image = initialResult {
-                    self.classificationService.classify(image)
-                }
-            })
-        }
+    private func classifyAllPhotos() {
+        currentIndex = -1
+        classifyNextPhoto()
     }
 
-    func classifyAllPhotosWithCoreMLOnly() {
-        let model = Nudity()
-        for asset in assets {
-            cachingImageManager.requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFit, options: nil, resultHandler: { (image, _) in
-                guard let buffer = image?.gar_pixelBuffer() else {
-                    fatalError("Scaling or converting to pixel buffer failed!")
-                }
-
-                guard let result = try? model.prediction(data: buffer) else {
-                    fatalError("Prediction failed!")
-                }
-
-                let confidence = result.prob["\(result.classLabel)"]! * 100.0
-                let converted = String(format: "%.2f", confidence)
-            })
+    private func classifyNextPhoto() {
+        currentIndex += 1
+        guard currentIndex < assets.count else {
+            print("No more photos")
+            return
         }
+
+        let asset = assets[currentIndex]
+        cachingImageManager.requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFit, options: nil, resultHandler: { [weak self] (initialResult, _) in
+            if let image = initialResult {
+                self?.classificationService.classify(image, for: asset)
+            } else {
+                self?.classifyNextPhoto()
+            }
+        })
     }
 }
 
 extension ViewController: ClassificationServiceDelegate {
+    func classificationService(_ service: ClassificationService, didFinishClassifying results: [ClassificationResult]?, with identifier: Any?) {
+        print("======== FinishClassifying ========\n* Index: \(currentIndex)")
 
-    func classificationService(_ service: ClassificationService, didStartClassifying image: UIImage) {
-        print("started...")
+        results?.forEach({ (result) in
+            print(result)
+        })
+
+        print("\n")
+
+        classifyNextPhoto()
     }
 
-    func classificationService(_ service: ClassificationService, didFailedClassifying error: Error?) {
-        print("failed: \(error)")
+    func classificationService(_ service: ClassificationService, didStartClassifying image: UIImage, with identifier: Any?) {
+        print("======== Start Classifying ========\nIndex: \(currentIndex)")
     }
 
-    func classificationService(_ service: ClassificationService, didFinishClassifying result: ClassificationResult?) {
-        print("result: \(result)")
+    func classificationService(_ service: ClassificationService, didFailedClassifying error: Error?, with identifier: Any?) {
+        print("======== Failed Classifying ========\nIndex: \(currentIndex)\nError: \(error?.localizedDescription ?? "unkown eror")\n")
     }
 }
 
