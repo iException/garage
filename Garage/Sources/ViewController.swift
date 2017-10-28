@@ -8,6 +8,7 @@
 
 import UIKit
 import Photos
+import VENTouchLock
 
 final class ViewController: UIViewController {
 
@@ -26,7 +27,7 @@ final class ViewController: UIViewController {
         }
     }
 
-    private let button: UIButton = {
+    private let scanButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Scan", for: .normal)
@@ -34,19 +35,12 @@ final class ViewController: UIViewController {
         return button
     }()
 
-    private let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
-        return imageView
-    }()
-
-    private let textLabel: UILabel = {
-        let textLabel = UILabel()
-        textLabel.translatesAutoresizingMaskIntoConstraints = false
-        textLabel.textAlignment = .center
-        textLabel.textColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
-        return textLabel
+    private let passcodeButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Set Passcode", for: .normal)
+        button.setTitleColor(#colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1), for: .normal)
+        return button
     }()
 
     lazy var classificationService: ClassificationService = {
@@ -61,22 +55,19 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        button.addTarget(self, action: #selector(scan(_:)), for: .touchUpInside)
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        view.addSubview(imageView)
-        view.addSubview(textLabel)
-        view.addSubview(button)
+        view.addSubview(scanButton)
+        view.addSubview(passcodeButton)
 
         NSLayoutConstraint.activate([
-            imageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            imageView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            imageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
-            textLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10.0),
-            textLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            button.topAnchor.constraint(equalTo: textLabel.bottomAnchor, constant: 10.0),
-            button.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            scanButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            scanButton.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
+            passcodeButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            passcodeButton.topAnchor.constraint(equalTo: scanButton.bottomAnchor, constant: 10),
         ])
+
+        scanButton.addTarget(self, action: #selector(scan(_:)), for: .touchUpInside)
+        passcodeButton.addTarget(self, action: #selector(setPasscode(_:)), for: .touchUpInside)
     }
 
 
@@ -93,6 +84,16 @@ final class ViewController: UIViewController {
                 print("Access denied")
             }
         })
+    }
+
+    @objc func setPasscode(_ sender: UIButton?) {
+        if (VENTouchLock.sharedInstance().isPasscodeSet()) {
+            print("Passcode already exists")
+        } else {
+            let viewController = UINavigationController(rootViewController: VENTouchLockCreatePasscodeViewController())
+            present(viewController, animated: true, completion: nil)
+            VENTouchLock.sharedInstance().backgroundLockVisible = false
+        }
     }
 
 

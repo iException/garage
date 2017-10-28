@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import VENTouchLock
 
 @UIApplicationMain
 class AppDelegate: UIResponder {
@@ -23,6 +24,15 @@ class AppDelegate: UIResponder {
 extension AppDelegate: UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        VENTouchLock.sharedInstance().setKeychainService(Bundle.main.bundleIdentifier!,
+                                                         keychainAccount: "test-account",
+                                                         touchIDReason: "Scan your fingerprint to use the app.",
+                                                         passcodeAttemptLimit: UInt.max,
+                                                         splashViewControllerClass: LockSplashViewController.self)
+        if (VENTouchLock.canUseTouchID()) {
+            VENTouchLock.setShouldUseTouchID(true)
+        }
+
         window?.makeKeyAndVisible()
         return true
     }

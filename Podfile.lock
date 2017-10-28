@@ -1,3 +1,24 @@
-PODFILE CHECKSUM: b544acc38c8bf27d4592ef4ed64d882ad008dd4e
+PODS:
+  - SAMKeychain (1.5.3)
+  - VENTouchLock (1.13.0):
+    - SAMKeychain (~> 1.0)
+
+DEPENDENCIES:
+  - VENTouchLock (from `https://github.com/venmo/VENTouchLock.git`)
+
+EXTERNAL SOURCES:
+  VENTouchLock:
+    :git: https://github.com/venmo/VENTouchLock.git
+
+CHECKOUT OPTIONS:
+  VENTouchLock:
+    :commit: 212661ae4b12b0a9a9c42314885819560be976c8
+    :git: https://github.com/venmo/VENTouchLock.git
+
+SPEC CHECKSUMS:
+  SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
+  VENTouchLock: 081d989bc9d672b6a067e03f1e13f857f9d6a8d4
+
+PODFILE CHECKSUM: 9062b81856597c653fc7e168b3230326ab5fc06b
 
 COCOAPODS: 1.3.1
