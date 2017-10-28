@@ -1,3 +1,20 @@
-PODFILE CHECKSUM: 558ed27097d2d1b96b5b4e2fac828a7f7558629b
+PODS:
+  - Realm (3.0.1):
+    - Realm/Headers (= 3.0.1)
+  - Realm/Headers (3.0.1)
+  - RealmSwift (3.0.1):
+    - Realm (= 3.0.1)
+  - SKPhotoBrowser (5.0.0)
+
+DEPENDENCIES:
+  - RealmSwift (~> 3.0)
+  - SKPhotoBrowser
+
+SPEC CHECKSUMS:
+  Realm: ba6144c74f835f7497791f6599d63a7755377b83
+  RealmSwift: 7d13b1ac4b6022a13f841e3143e7789c9e40ad0d
+  SKPhotoBrowser: fe936f878955a568c726bf05d14e1d2717d91ce0
+
+PODFILE CHECKSUM: 02f5e654fefeda4f5df40cb70e1bde9de725b285
 
 COCOAPODS: 1.2.1
