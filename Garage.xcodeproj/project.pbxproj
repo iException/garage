@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		376BFB1D73944FD7ACD7F5E1 /* Pods_Garage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A571E759776A49F6F7661E6C /* Pods_Garage.framework */; };
+		5374D8311FA41558002EA204 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374D8301FA41558002EA204 /* Vehicle.swift */; };
+		5374D8341FA42A53002EA204 /* VehicleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374D8331FA42A53002EA204 /* VehicleCollectionViewCell.swift */; };
+		5374D83C1FA43692002EA204 /* VehicleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374D83B1FA43692002EA204 /* VehicleViewModel.swift */; };
+		5374D83F1FA44F46002EA204 /* CollectionSafeIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374D83E1FA44F46002EA204 /* CollectionSafeIndex.swift */; };
+		538C5DB71FA462A200EE1B69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538C5DB61FA462A200EE1B69 /* ViewController.swift */; };
+		538C5DB91FA4639400EE1B69 /* VehicleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538C5DB81FA4639400EE1B69 /* VehicleListViewController.swift */; };
 		8AC81EF35CEC801E96830597 /* Pods_GarageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55BCDAF1ED45AD3C96EC2CDC /* Pods_GarageTests.framework */; };
 		F1AABB6F1FA335430042B9D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AABB6E1FA335430042B9D2 /* AppDelegate.swift */; };
-		F1AABB711FA335430042B9D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AABB701FA335430042B9D2 /* ViewController.swift */; };
-		F1AABB761FA335430042B9D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1AABB751FA335430042B9D2 /* Assets.xcassets */; };
 		F1AABB791FA335430042B9D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1AABB771FA335430042B9D2 /* LaunchScreen.storyboard */; };
 		F1AABB841FA335430042B9D2 /* GarageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AABB831FA335430042B9D2 /* GarageTests.swift */; };
 		F1AABB921FA3545D0042B9D2 /* Nudity.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F1AABB911FA3545C0042B9D2 /* Nudity.mlmodel */; };
@@ -33,6 +37,13 @@
 
 /* Begin PBXFileReference section */
 		2581783DF27DDA9D093D2A84 /* Pods-Garage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Garage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Garage/Pods-Garage.debug.xcconfig"; sourceTree = "<group>"; };
+		5374D8301FA41558002EA204 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		5374D8331FA42A53002EA204 /* VehicleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleCollectionViewCell.swift; sourceTree = "<group>"; };
+		5374D83B1FA43692002EA204 /* VehicleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleViewModel.swift; sourceTree = "<group>"; };
+		5374D83E1FA44F46002EA204 /* CollectionSafeIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionSafeIndex.swift; sourceTree = "<group>"; };
+		538C5DB61FA462A200EE1B69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		538C5DB81FA4639400EE1B69 /* VehicleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListViewController.swift; sourceTree = "<group>"; };
+		538C5DBE1FA489BF00EE1B69 /* Garage-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Garage-Bridging-Header.h"; sourceTree = "<group>"; };
 		55BCDAF1ED45AD3C96EC2CDC /* Pods_GarageTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GarageTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F661924FD94EEA75BD92D1E /* Pods-GarageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GarageTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GarageTests/Pods-GarageTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7C49BDC52CE672DC3A6381E6 /* Pods-Garage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Garage.release.xcconfig"; path = "Pods/Target Support Files/Pods-Garage/Pods-Garage.release.xcconfig"; sourceTree = "<group>"; };
@@ -40,8 +51,6 @@
 		A571E759776A49F6F7661E6C /* Pods_Garage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Garage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1AABB6B1FA335430042B9D2 /* Garage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Garage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1AABB6E1FA335430042B9D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F1AABB701FA335430042B9D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F1AABB751FA335430042B9D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1AABB781FA335430042B9D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1AABB7A1FA335430042B9D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1AABB7F1FA335430042B9D2 /* GarageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GarageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +90,40 @@
 				55BCDAF1ED45AD3C96EC2CDC /* Pods_GarageTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5374D82F1FA414F3002EA204 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5374D8301FA41558002EA204 /* Vehicle.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5374D8321FA42A3B002EA204 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5374D8331FA42A53002EA204 /* VehicleCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5374D83A1FA43675002EA204 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5374D83B1FA43692002EA204 /* VehicleViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5374D83D1FA44F32002EA204 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F1AABB931FA35FAA0042B9D2 /* UIImage+Garage.swift */,
+				5374D83E1FA44F46002EA204 /* CollectionSafeIndex.swift */,
+				F1AABB971FA41ED50042B9D2 /* CGImagePropertyOrientation+UIImageOrientation.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		C5844D01DA581F310CEF9EFD /* Pods */ = {
@@ -136,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				F1AABB911FA3545C0042B9D2 /* Nudity.mlmodel */,
-				F1AABB751FA335430042B9D2 /* Assets.xcassets */,
 				F1AABB771FA335430042B9D2 /* LaunchScreen.storyboard */,
 				F1AABB7A1FA335430042B9D2 /* Info.plist */,
 			);
@@ -146,11 +188,15 @@
 		F1AABB901FA33D7C0042B9D2 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				F1AABB971FA41ED50042B9D2 /* CGImagePropertyOrientation+UIImageOrientation.swift */,
+				5374D83D1FA44F32002EA204 /* Extension */,
+				5374D83A1FA43675002EA204 /* ViewModel */,
+				5374D8321FA42A3B002EA204 /* View */,
+				5374D82F1FA414F3002EA204 /* Model */,
+				538C5DB61FA462A200EE1B69 /* ViewController.swift */,
 				F1AABB6E1FA335430042B9D2 /* AppDelegate.swift */,
-				F1AABB701FA335430042B9D2 /* ViewController.swift */,
-				F1AABB931FA35FAA0042B9D2 /* UIImage+Garage.swift */,
 				F1AABB951FA41A510042B9D2 /* ImageClassification.swift */,
+				538C5DB81FA4639400EE1B69 /* VehicleListViewController.swift */,
+				538C5DBE1FA489BF00EE1B69 /* Garage-Bridging-Header.h */,
 				F1AABB9B1FA468FA0042B9D2 /* LockSplashViewController.swift */,
 			);
 			path = Sources;
@@ -212,6 +258,7 @@
 				TargetAttributes = {
 					F1AABB6A1FA335430042B9D2 = {
 						CreatedOnToolsVersion = 9.0.1;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					F1AABB7E1FA335430042B9D2 = {
@@ -246,7 +293,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1AABB791FA335430042B9D2 /* LaunchScreen.storyboard in Resources */,
-				F1AABB761FA335430042B9D2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,12 +349,20 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Garage/Pods-Garage-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework",
+				"${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/VENTouchLock/VENTouchLock.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAMKeychain.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKPhotoBrowser.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VENTouchLock.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,13 +422,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1AABB711FA335430042B9D2 /* ViewController.swift in Sources */,
+				538C5DB71FA462A200EE1B69 /* ViewController.swift in Sources */,
+				5374D83C1FA43692002EA204 /* VehicleViewModel.swift in Sources */,
+				5374D8311FA41558002EA204 /* Vehicle.swift in Sources */,
+				5374D8341FA42A53002EA204 /* VehicleCollectionViewCell.swift in Sources */,
+				538C5DB91FA4639400EE1B69 /* VehicleListViewController.swift in Sources */,
 				F1AABB921FA3545D0042B9D2 /* Nudity.mlmodel in Sources */,
 				F1AABB961FA41A510042B9D2 /* ImageClassification.swift in Sources */,
 				F1AABB9C1FA468FA0042B9D2 /* LockSplashViewController.swift in Sources */,
 				F1AABB941FA35FAA0042B9D2 /* UIImage+Garage.swift in Sources */,
 				F1AABB981FA41ED50042B9D2 /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
 				F1AABB6F1FA335430042B9D2 /* AppDelegate.swift in Sources */,
+				5374D83F1FA44F46002EA204 /* CollectionSafeIndex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,11 +579,15 @@
 			baseConfigurationReference = 2581783DF27DDA9D093D2A84 /* Pods-Garage.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XQ23NX4TN8;
 				INFOPLIST_FILE = Garage/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.baixing.garage;
+				PRODUCT_BUNDLE_IDENTIFIER = com.baixing.garage2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Garage/Sources/Garage-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -535,11 +598,14 @@
 			baseConfigurationReference = 7C49BDC52CE672DC3A6381E6 /* Pods-Garage.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XQ23NX4TN8;
 				INFOPLIST_FILE = Garage/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.baixing.garage;
+				PRODUCT_BUNDLE_IDENTIFIER = com.baixing.garage2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Garage/Sources/Garage-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
