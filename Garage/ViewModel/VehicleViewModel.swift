@@ -13,9 +13,11 @@ class VehicleViewModel: NSObject {
     var contentMode: UIViewContentMode = .scaleAspectFill
     var index: Int = 0
     var image: UIImage?
+    var model: Vehicle
     
-    init(image: UIImage) {
+    init(image: UIImage, model: Vehicle) {
         self.image = image
+        self.model = model
     }
 }
 

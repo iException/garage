@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        forgeData()
+        forgeData()
         setUpViews()
         configurePhotoBrowserOptions()
         loadVehicle()
@@ -57,7 +57,7 @@ class ViewController: UIViewController {
     // MARK: - Realm
     
     private func forgeData() {
-        for index in 0...11 {
+        for index in 0...5 {
             let imageName = "image\(index)"
             let image = UIImage(named:imageName)!
             let aVehicle = Vehicle(image: image)
@@ -76,9 +76,15 @@ class ViewController: UIViewController {
         try! realm.commitWrite()
     }
     
+    private func deleteVehicle(vehicle: Vehicle, realm: Realm) {
+        try! realm.write {
+            realm.delete(vehicle)
+        }
+    }
+    
     private func loadVehicle() {
         self.vehicles = realm.objects(Vehicle.self).map { (vehicle) -> VehicleViewModel in
-            let viewModel = VehicleViewModel(image: vehicle.image!)
+            let viewModel = VehicleViewModel(image: vehicle.image!, model: vehicle)
             return viewModel
         }
     }
@@ -102,9 +108,13 @@ class ViewController: UIViewController {
     
     // MARK: - Wrapper
     
-    private func imageAtIndex(index: Int) -> UIImage? {
+    private func viewModelAtIndex(index: Int) -> VehicleViewModel? {
         guard let vehicles = vehicles else { return nil }
-        let vehicle = vehicles[index]
+        return vehicles[safe: index]
+    }
+    
+    private func imageAtIndex(index: Int) -> UIImage? {
+        guard let vehicle = viewModelAtIndex(index: index) else { return nil }
         return vehicle.image
     }
     
@@ -161,8 +171,12 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 
 extension ViewController: SKPhotoBrowserDelegate {
     
-    func removePhoto(index: Int, reload: (() -> Void)) {
-//        reload()
+    func removePhoto(_ browser: SKPhotoBrowser, index: Int, reload: @escaping (() -> Void)) {
+        guard let vehicle = viewModelAtIndex(index: index) else { return }
+        deleteVehicle(vehicle: vehicle.model, realm: realm)
+        loadVehicle()
+        reloadCollectionView()
+        reload()
     }
     
     func viewForPhoto(_ browser: SKPhotoBrowser, index: Int) -> UIView? {
