@@ -8,6 +8,7 @@
 
 import UIKit
 import Photos
+import SVProgressHUD
 
 protocol ViewControllerDelegate {
     func viewControllerFinishClassifying(_ viewController: ViewController, assets: [PHAsset])
@@ -15,7 +16,6 @@ protocol ViewControllerDelegate {
 
 
 final class ViewController: UIViewController {
-
     // MARK: - Properties
     let targetSize = CGSize(width: 224, height: 224)
     let cachingImageManager = PHCachingImageManager()
@@ -89,6 +89,7 @@ final class ViewController: UIViewController {
     // MARK: - Actions
 
     @objc func scan(_ sender: UIButton?) {
+        SVProgressHUD.show()
         PHPhotoLibrary.requestAuthorization({ (status) in
             if (status == .authorized) {
                 DispatchQueue.main.async {
@@ -145,6 +146,7 @@ final class ViewController: UIViewController {
 
     private func finishClassifyingAllPhotos() {
         print("finishClassifyingAllPhotos")
+        SVProgressHUD.dismiss()
         guard let delegate = delegate else { return }
         delegate.viewControllerFinishClassifying(self, assets: nsfwAssets)
     }
