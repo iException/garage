@@ -43,14 +43,9 @@ class VehicleListViewController: UIViewController {
 //        forgeData()
 //        removeAllVehicle()
         setUpViews()
+        setUpNavigationItems()
         configurePhotoBrowserOptions()
         reload()
-        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//            let viewController = ViewController()
-//            viewController.delegate = self
-//            self.present(viewController, animated: true, completion: nil)
-//        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -61,9 +56,22 @@ class VehicleListViewController: UIViewController {
     
     // MARK: - Private -
     
+    private func setUpNavigationItems() {
+        let buttonItem = UIBarButtonItem(title: "scan", style: .plain, target: self, action: #selector(scanButtonPressed(_:)))
+        self.navigationItem.rightBarButtonItems = [ buttonItem ]
+    }
+    
     private func reload() {
         loadVehicle()
         reloadCollectionView()
+    }
+    
+    // MARK: - Event Handler
+    
+    @objc private func scanButtonPressed(_ sender : Any) {
+        let viewController = ViewController()
+        viewController.delegate = self
+        self.present(viewController, animated: true, completion: nil)
     }
     
     // MARK: - Realm
@@ -117,6 +125,7 @@ class VehicleListViewController: UIViewController {
     }
     
     // MARK: - CollectionView
+    
     private func setUpViews() {
         view.addSubview(collectionView)
     }

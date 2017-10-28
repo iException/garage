@@ -16,8 +16,8 @@ class AppDelegate: UIResponder {
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.backgroundColor = UIColor.white
         let rootViewController = VehicleListViewController()
-//        let navigationController = UINavigationController(rootViewController: rootViewController)
-        window.rootViewController = rootViewController
+        let navigationController = UINavigationController(rootViewController: rootViewController)
+        window.rootViewController = navigationController
         return window
     }()
 }
