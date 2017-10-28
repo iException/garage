@@ -23,6 +23,7 @@
 		F1AABB961FA41A510042B9D2 /* ImageClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AABB951FA41A510042B9D2 /* ImageClassification.swift */; };
 		F1AABB981FA41ED50042B9D2 /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AABB971FA41ED50042B9D2 /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
 		F1AABB9C1FA468FA0042B9D2 /* LockSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AABB9B1FA468FA0042B9D2 /* LockSplashViewController.swift */; };
+		F1AABBA01FA4974C0042B9D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1AABB9F1FA4974C0042B9D2 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		F1AABB951FA41A510042B9D2 /* ImageClassification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassification.swift; sourceTree = "<group>"; };
 		F1AABB971FA41ED50042B9D2 /* CGImagePropertyOrientation+UIImageOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+UIImageOrientation.swift"; sourceTree = "<group>"; };
 		F1AABB9B1FA468FA0042B9D2 /* LockSplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockSplashViewController.swift; sourceTree = "<group>"; };
+		F1AABB9F1FA4974C0042B9D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 		F1AABB8F1FA33D440042B9D2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F1AABB9F1FA4974C0042B9D2 /* Assets.xcassets */,
 				F1AABB911FA3545C0042B9D2 /* Nudity.mlmodel */,
 				F1AABB771FA335430042B9D2 /* LaunchScreen.storyboard */,
 				F1AABB7A1FA335430042B9D2 /* Info.plist */,
@@ -289,6 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1AABBA01FA4974C0042B9D2 /* Assets.xcassets in Resources */,
 				F1AABB791FA335430042B9D2 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
