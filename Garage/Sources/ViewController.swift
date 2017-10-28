@@ -123,7 +123,7 @@ final class ViewController: UIViewController {
     private func classifyNextPhoto() {
         currentIndex += 1
         guard currentIndex < assets.count else {
-            print("No more photos")
+            finishClassifyingAllPhotos()
             return
         }
 
@@ -135,6 +135,11 @@ final class ViewController: UIViewController {
                 self?.classifyNextPhoto()
             }
         })
+    }
+
+    private func finishClassifyingAllPhotos() {
+        // TODO: Handle nsfwAssets
+        print("finishClassifyingAllPhotos")
     }
 }
 
