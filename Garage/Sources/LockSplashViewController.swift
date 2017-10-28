@@ -13,13 +13,12 @@ class LockSplashViewController: VENTouchLockSplashViewController {
 
     // MARK: - Properties
 
-    lazy var authButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Open", for: .normal)
-        button.setTitleColor(#colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1), for: .normal)
-        button.addTarget(self, action: #selector(authenticate(_:)), for: .touchUpInside)
-        return button
+    lazy var imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = #imageLiteral(resourceName: "i-love-study")
+        return imageView
     }()
 
 
@@ -56,19 +55,26 @@ class LockSplashViewController: VENTouchLockSplashViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        view.addSubview(authButton)
+        view.addSubview(imageView)
 
         NSLayoutConstraint.activate([
-            authButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            authButton.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
+            imageView.leadingAnchor .constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            imageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
         ])
+
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(authenticate(_:)))
+        tapGestureRecognizer.numberOfTapsRequired = 4
+        view.addGestureRecognizer(tapGestureRecognizer)
     }
 
 
     // MARK: - Actions
 
-    @objc func authenticate(_ sender: UIButton?) {
+    @objc func authenticate(_ sender: UITapGestureRecognizer?) {
         if VENTouchLock.canUseTouchID() {
             showTouchID()
         } else {
