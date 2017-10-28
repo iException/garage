@@ -15,10 +15,13 @@
 		8AC81EF35CEC801E96830597 /* Pods_GarageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55BCDAF1ED45AD3C96EC2CDC /* Pods_GarageTests.framework */; };
 		F1AABB6F1FA335430042B9D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AABB6E1FA335430042B9D2 /* AppDelegate.swift */; };
 		F1AABB711FA335430042B9D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AABB701FA335430042B9D2 /* ViewController.swift */; };
-		F1AABB741FA335430042B9D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1AABB721FA335430042B9D2 /* Main.storyboard */; };
 		F1AABB761FA335430042B9D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1AABB751FA335430042B9D2 /* Assets.xcassets */; };
 		F1AABB791FA335430042B9D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1AABB771FA335430042B9D2 /* LaunchScreen.storyboard */; };
 		F1AABB841FA335430042B9D2 /* GarageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AABB831FA335430042B9D2 /* GarageTests.swift */; };
+		F1AABB921FA3545D0042B9D2 /* Nudity.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F1AABB911FA3545C0042B9D2 /* Nudity.mlmodel */; };
+		F1AABB941FA35FAA0042B9D2 /* UIImage+Garage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AABB931FA35FAA0042B9D2 /* UIImage+Garage.swift */; };
+		F1AABB961FA41A510042B9D2 /* ImageClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AABB951FA41A510042B9D2 /* ImageClassification.swift */; };
+		F1AABB981FA41ED50042B9D2 /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AABB971FA41ED50042B9D2 /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,13 +48,16 @@
 		F1AABB6B1FA335430042B9D2 /* Garage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Garage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1AABB6E1FA335430042B9D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1AABB701FA335430042B9D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F1AABB731FA335430042B9D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F1AABB751FA335430042B9D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1AABB781FA335430042B9D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1AABB7A1FA335430042B9D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1AABB7F1FA335430042B9D2 /* GarageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GarageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1AABB831FA335430042B9D2 /* GarageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageTests.swift; sourceTree = "<group>"; };
 		F1AABB851FA335430042B9D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1AABB911FA3545C0042B9D2 /* Nudity.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Nudity.mlmodel; sourceTree = "<group>"; };
+		F1AABB931FA35FAA0042B9D2 /* UIImage+Garage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Garage.swift"; sourceTree = "<group>"; };
+		F1AABB951FA41A510042B9D2 /* ImageClassification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassification.swift; sourceTree = "<group>"; };
+		F1AABB971FA41ED50042B9D2 /* CGImagePropertyOrientation+UIImageOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+UIImageOrientation.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,12 +159,10 @@
 				5374D83A1FA43675002EA204 /* ViewModel */,
 				5374D8321FA42A3B002EA204 /* View */,
 				5374D82F1FA414F3002EA204 /* Model */,
-				F1AABB6E1FA335430042B9D2 /* AppDelegate.swift */,
 				F1AABB701FA335430042B9D2 /* ViewController.swift */,
-				F1AABB721FA335430042B9D2 /* Main.storyboard */,
 				F1AABB751FA335430042B9D2 /* Assets.xcassets */,
-				F1AABB771FA335430042B9D2 /* LaunchScreen.storyboard */,
-				F1AABB7A1FA335430042B9D2 /* Info.plist */,
+				F1AABB901FA33D7C0042B9D2 /* Sources */,
+				F1AABB8F1FA33D440042B9D2 /* Resources */,
 			);
 			path = Garage;
 			sourceTree = "<group>";
@@ -170,6 +174,29 @@
 				F1AABB851FA335430042B9D2 /* Info.plist */,
 			);
 			path = GarageTests;
+			sourceTree = "<group>";
+		};
+		F1AABB8F1FA33D440042B9D2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F1AABB911FA3545C0042B9D2 /* Nudity.mlmodel */,
+				F1AABB751FA335430042B9D2 /* Assets.xcassets */,
+				F1AABB771FA335430042B9D2 /* LaunchScreen.storyboard */,
+				F1AABB7A1FA335430042B9D2 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F1AABB901FA33D7C0042B9D2 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F1AABB971FA41ED50042B9D2 /* CGImagePropertyOrientation+UIImageOrientation.swift */,
+				F1AABB6E1FA335430042B9D2 /* AppDelegate.swift */,
+				F1AABB701FA335430042B9D2 /* ViewController.swift */,
+				F1AABB931FA35FAA0042B9D2 /* UIImage+Garage.swift */,
+				F1AABB951FA41A510042B9D2 /* ImageClassification.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,7 +290,6 @@
 			files = (
 				F1AABB791FA335430042B9D2 /* LaunchScreen.storyboard in Resources */,
 				F1AABB761FA335430042B9D2 /* Assets.xcassets in Resources */,
-				F1AABB741FA335430042B9D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,13 +309,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Garage-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		12B585741AA1D069AF4F54F6 /* [CP] Check Pods Manifest.lock */ = {
@@ -298,13 +327,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GarageTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		26C8E62C6180B3CB24480BF2 /* [CP] Embed Pods Frameworks */ = {
@@ -378,6 +410,10 @@
 				5374D8311FA41558002EA204 /* Vehicle.swift in Sources */,
 				5374D8341FA42A53002EA204 /* VehicleCollectionViewCell.swift in Sources */,
 				F1AABB711FA335430042B9D2 /* ViewController.swift in Sources */,
+				F1AABB921FA3545D0042B9D2 /* Nudity.mlmodel in Sources */,
+				F1AABB961FA41A510042B9D2 /* ImageClassification.swift in Sources */,
+				F1AABB941FA35FAA0042B9D2 /* UIImage+Garage.swift in Sources */,
+				F1AABB981FA41ED50042B9D2 /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
 				F1AABB6F1FA335430042B9D2 /* AppDelegate.swift in Sources */,
 				5374D83F1FA44F46002EA204 /* CollectionSafeIndex.swift in Sources */,
 			);
@@ -402,14 +438,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F1AABB721FA335430042B9D2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F1AABB731FA335430042B9D2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F1AABB771FA335430042B9D2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -534,10 +562,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XQ23NX4TN8;
-				INFOPLIST_FILE = Garage/Info.plist;
+				INFOPLIST_FILE = Garage/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.baixing.Garage;
+				PRODUCT_BUNDLE_IDENTIFIER = com.baixing.garage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -550,10 +577,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XQ23NX4TN8;
-				INFOPLIST_FILE = Garage/Info.plist;
+				INFOPLIST_FILE = Garage/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.baixing.Garage;
+				PRODUCT_BUNDLE_IDENTIFIER = com.baixing.garage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
